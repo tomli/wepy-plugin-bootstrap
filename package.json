@@ -1,6 +1,6 @@
 {
   "name": "wepy-plugin-bootstrap",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Introduce bootstrap in wepy project ",
   "main": "dist/index.js",
   "scripts": {
