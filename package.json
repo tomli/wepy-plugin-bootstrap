@@ -1,0 +1,33 @@
+{
+  "name": "wepy-plugin-bootstrap",
+  "version": "1.0.0",
+  "description": "Introduce bootstrap in wepy project ",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomli/wepy-plugin-bootstrap.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "plugin",
+    "weapp",
+    "wepy"
+  ],
+  "author": "Tom.Li",
+  "license": "MIT",
+  "dependencies": {
+    "postcss": "^6.0.8",
+    "postcss-bootstrap-wxss": "^1.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1"
+  }
+}
