@@ -1,10 +1,9 @@
+import postcss from 'postcss';
+
 var setting = {
-    filter: /\.(css|scss|less)$/
-    remToRpx: 35// 这个参数可以用来调整转换rem单位到rpx单位时使用的比例
+    filter: /app\.(wxss)$/,
+    remToRpx: 35
 }
-var postcssMpvueWxss
-// const postcssMpvueWxss = require('postcss-mpvue-wxss')(optopnsMpvue);
-// const postcssBootstrapWxss = require('postcss-bootstrap-wxss')();
 
 export default class WepyPluginBootstrap {
   constructor(opts = {}) {
@@ -13,7 +12,7 @@ export default class WepyPluginBootstrap {
       remToRpx: this.setting.remToRpx,
       replaceTagSelector: Object.assign(require('postcss-mpvue-wxss/lib/wxmlTagMap'), {
           'button': 'button',
-          '*': 'view' // 将覆盖前面的 * 选择器被清理规则
+          '*': 'view'
       })
     })
     this.postcssBootstrapWxss = require('postcss-bootstrap-wxss')({
@@ -22,10 +21,22 @@ export default class WepyPluginBootstrap {
     this.postcssAll = postcss([ this.postcssMpvueWxss, this.postcssBootstrapWxss ])
   }
   apply(op) {
-    let setting = this.setting
-    if (op.code && setting.filter.test(op.file)) {
-        this.postcssAll.process(op.code)
-    }
-    op.next()
+      let setting = this.setting
+      if (!setting.filter.test(op.file)) {
+          op.next();
+      } else {
+          op.output && op.output({
+              action: '转换适应bootstrap',
+              file: op.file
+          });
+
+          this.postcssAll.process(op.code, { from: op.file }).then((result) => {
+              op.code = result.css;
+              op.next();
+          }).catch(e => {
+                  op.err = e;
+              op.catch();
+          });
+      }
   }
 }
