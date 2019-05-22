@@ -14,6 +14,16 @@ wepy 插件，为前段开发者提供基于bootstrap开发微信小程序的供
       //  示例： 转换 index.wxss 和 app.wxss 两个文件
       // filter: /(app|index)\.(wxss)$/,
       remToRpx: 35// 这个参数可以用来调整转换rem单位到rpx单位时使用的比例
+    },
+    'htmltag': {
+       filter: /\.(wxml)$/, // 文件后缀匹配
     }
   }
+``` 
+  
+# 备注
+需要和[wepy-plugin-htmltag](URL 'https://github.com/ryzonqz/wepy-plugin-htmltag')一起使用
 
+# DEMO
+  [wepy-bootstrap-demo](URL 'https://github.com/tomli/wepy-bootstrap-demo.git')
+    
