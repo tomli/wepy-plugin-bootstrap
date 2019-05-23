@@ -20,7 +20,11 @@ wepy 插件，为前段开发者提供基于bootstrap开发微信小程序的供
     }
   }
 ``` 
+ 
   
+  ****[如何在已有wepy项目中使用bootstrap](https://github.com/tomli/wepy-bootstrap-demo/blob/master/howtointro.md)****
+  
+   
 # 备注
 需要和[wepy-plugin-htmltag](https://github.com/ryzonqz/wepy-plugin-htmltag) 一起使用
 
