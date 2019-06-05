@@ -30,6 +30,7 @@ var WepyPluginBootstrap = function () {
             remToRpx: this.setting.remToRpx,
             replaceTagSelector: Object.assign(require('postcss-mpvue-wxss/lib/wxmlTagMap'), {
                 'button': 'button',
+                'textarea': 'textarea',
                 '*': 'view'
             })
         });
