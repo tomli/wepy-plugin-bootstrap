@@ -21,7 +21,7 @@
   "author": "Tom.Li",
   "license": "MIT",
   "dependencies": {
-    "postcss": "^6.0.8",
+    "postcss": "^7.0.36",
     "postcss-bootstrap-wxss": "^1.0.4",
     "wepy-plugin-htmltag": "^1.0.0"
   },
